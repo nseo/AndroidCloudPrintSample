@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, CloudPrintActivity!</string>
+    <string name="app_name">CloudPrint</string>
+    <string name="demo_uri">http://www.google.com</string>
+
+</resources>
