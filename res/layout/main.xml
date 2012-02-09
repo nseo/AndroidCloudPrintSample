@@ -4,11 +4,20 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-    
-<Button
-    android:id="@+id/button"
-    android:text="Click to start"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/demo_uri" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Click to start" />
     
 </LinearLayout>

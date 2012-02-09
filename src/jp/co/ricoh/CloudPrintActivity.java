@@ -5,9 +5,9 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class CloudPrintActivity extends Activity {
@@ -24,8 +24,10 @@ public class CloudPrintActivity extends Activity {
             public void onClick(View v) {
                 try {
                 	Intent printIntent = new Intent(CloudPrintActivity.this, PrintDialogActivity.class);
-                	printIntent.setDataAndType(Uri.parse(getString(R.string.demo_uri)), "text/html");
-                	printIntent.putExtra("title", "Test");
+                    EditText editText = (EditText) findViewById(R.id.editText1);
+                	String uriToPrint = editText.getText().toString();
+                	printIntent.setDataAndType(Uri.parse(uriToPrint), "url");
+                	printIntent.putExtra("title", "MyCloudPrint");
                 	startActivity(printIntent);
                 } catch (ActivityNotFoundException e) {
                     // このインテントに応答できるアクティビティがインストールされていない場合

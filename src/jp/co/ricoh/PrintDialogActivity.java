@@ -74,27 +74,28 @@ public class PrintDialogActivity extends Activity {
     }
 
     public String getContent() {
-      try {
-        ContentResolver contentResolver = getContentResolver();
-        InputStream is = contentResolver.openInputStream(cloudPrintIntent.getData());
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-        byte[] buffer = new byte[4096];
-        int n = is.read(buffer);
-        while (n >= 0) {
-          baos.write(buffer, 0, n);
-          n = is.read(buffer);
-        }
-        is.close();
-        baos.flush();
-
-        return Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
-      } catch (FileNotFoundException e) {
-        e.printStackTrace();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-      return "";
+//      try {
+//        ContentResolver contentResolver = getContentResolver();
+//        InputStream is = contentResolver.openInputStream(cloudPrintIntent.getData());
+//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//
+//        byte[] buffer = new byte[4096];
+//        int n = is.read(buffer);
+//        while (n >= 0) {
+//          baos.write(buffer, 0, n);
+//          n = is.read(buffer);
+//        }
+//        is.close();
+//        baos.flush();
+//
+//        return Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
+//      } catch (FileNotFoundException e) {
+//        e.printStackTrace();
+//      } catch (IOException e) {
+//        e.printStackTrace();
+//      }
+//      return "";
+      return cloudPrintIntent.getData().toString();
     }
 
     public String getEncoding() {
